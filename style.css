@@ -91,7 +91,9 @@ svg {
 }
 
 .cls-2-10,
-.cls-2-4 {
+.cls-2-4,
+.cls-2-4b,
+.cls-2-4a {
   fill: #da5713;
 }
 
@@ -395,6 +397,9 @@ svg {
   font-size: 23.93px;
 }
 
+.orangeBox {
+  cursor: pointer;
+}
 /* #white-horse {
   transform: rotate(45deg);
 } */

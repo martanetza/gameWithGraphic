@@ -8,7 +8,7 @@ function loadSVG() {
     .then(svgdata => {
       document.querySelector("main").insertAdjacentHTML("afterbegin", svgdata);
       animation();
-      initRace();
+      morphSVG();
     });
 }
 
@@ -16,6 +16,17 @@ function animation() {
   document.querySelector("#playButton").addEventListener("click", () => {
     document.querySelector("#FIRST").classList.add("hide");
 
+    let boxesWithHorses = document.querySelectorAll(
+      "#horse1, #horse2, #horse3, #horse4"
+    );
+
+    for (let i = 0; i < boxesWithHorses.length; i++) {
+      TweenLite.from(boxesWithHorses[i], 1, {
+        delay: i / 2,
+        y: "-=519",
+        ease: Elastic.easeOut.config(0.5, 0.3)
+      });
+    }
     document.querySelector("#SECOND").classList.remove("hide");
     document
       .querySelectorAll("#horse1, #horse2, #horse3, #horse4")
@@ -34,8 +45,6 @@ function animation() {
 }
 
 //race
-
-function initRace() {}
 
 let i;
 let time;
@@ -58,7 +67,7 @@ let randomVal = Math.random();
 
 function horseRace() {
   let svg = document.querySelector("svg").getBoundingClientRect();
-
+  console.log(svg.width);
   let animateArray = document.querySelectorAll(
     "#white-horse, #brown-white-horse, #black-horse, #brown-horse"
   );
@@ -71,24 +80,35 @@ function horseRace() {
         randomVal +
         ",0.664 0.804,0.804 0.856,0.81 1,1"
     );
-    time = Math.random() * 10 + 10;
+    let roundRandom = Math.random() * 10;
+    time = roundRandom + 10;
     let element = animateArray[i];
 
-    TweenMax.fromTo(
-      element,
-      1,
-      { rotation: -20, transformOrigin: "50% 50%" },
-      { rotation: 20, transformOrigin: "50% 50%", repeat: -1, repeatDelay: 0.4 }
-    );
-
-    // TweenLite.to(element, 1, {
-    //   rotation: 10,
-    //   transformOrigin: "left 50%"
-    // });
+    var tl = new TimelineMax({ repeat: -1, repeatDelay: 0 });
+    tl.from(element, roundRandom / 10 + 0.2, {
+      ease: Power2.easeIn,
+      rotation: -10,
+      transformOrigin: "50% 50%"
+    });
+    tl.to(element, roundRandom / 10 + 0.2, {
+      ease: Power2.easeOut,
+      rotation: 10,
+      transformOrigin: "50% 50%"
+    });
+    tl.from(element, roundRandom / 10 + 0.2, {
+      ease: Power2.easeIn,
+      rotation: 10,
+      transformOrigin: "50% 50%"
+    });
+    tl.to(element, roundRandom / 10 + 0.2, {
+      ease: Power2.easeOut,
+      rotation: -10,
+      transformOrigin: "50% 50%"
+    });
 
     TweenLite.to(element, time, {
       ease: "run" + [i],
-      x: svg.width - 40,
+      x: 850,
 
       onComplete: function() {
         console.log(i, Math.round(time * 100) / 100);
@@ -120,5 +140,57 @@ function showScores() {
   for (let i = 0; i < horseNames.length; i++) {
     horseNames[i].textContent = horses[i];
     horseTimes[i].textContent = scores[i];
+  }
+}
+
+// morph svg
+function morphSVG() {
+  let allBoxes = document.querySelectorAll(".orangeBox");
+
+  let allBoxes_a = document.querySelectorAll(".cls-2-4a");
+  let textGroup = document.querySelectorAll(".text-group");
+  let allImageHorses = document.querySelectorAll(
+    "#horseImage1, #horseImage2, #horseImage3, #horseImage4"
+  );
+
+  console.log(allBoxes);
+  for (let i = 0; i < allBoxes.length; i++) {
+    Array.from(allBoxes[i].querySelectorAll("text, path")).forEach(item => {
+      item.addEventListener("mouseover", () => {
+        event.preventDefault();
+        console.log(event.target);
+        TweenMax.to(allBoxes_a[i], 0.4, {
+          scaleY: -1.2,
+          y: "1"
+        });
+        TweenMax.to(allImageHorses[i], 0.4, {
+          delay: 0.2,
+          scaleY: 0,
+          transformOrigin: "100% 100%"
+        });
+        TweenMax.to(textGroup[i], 0.4, {
+          y: "-70"
+        });
+      });
+    });
+  }
+  for (let i = 0; i < allBoxes.length; i++) {
+    Array.from(allBoxes[i].querySelectorAll("path")).forEach(item => {
+      item.addEventListener("mouseout", () => {
+        event.preventDefault();
+        console.log(event.target);
+        TweenMax.to(allBoxes_a[i], 0.4, {
+          scaleY: 0
+        });
+        TweenMax.to(allImageHorses[i], 0.4, {
+          delay: 0.2,
+          scaleY: 0.33,
+          transformOrigin: "100% 100%"
+        });
+        TweenMax.to(textGroup[i], 0.4, {
+          y: "0"
+        });
+      });
+    });
   }
 }
