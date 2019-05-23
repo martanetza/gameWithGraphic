@@ -1,0 +1,400 @@
+main {
+  width: 100%;
+}
+
+svg {
+  margin: auto 14.5%;
+}
+
+.cls-1 {
+  isolation: isolate;
+}
+
+.cls-2 {
+}
+
+.cls-3 {
+  opacity: 0.63;
+  mix-blend-mode: multiply;
+}
+
+.cls-4,
+.cls-8 {
+  fill: #da5713;
+}
+
+.cls-5 {
+  fill: none;
+}
+
+.cls-5,
+.cls-8 {
+  stroke: #da5713;
+}
+
+.cls-5,
+.cls-7,
+.cls-8 {
+  stroke-miterlimit: 10;
+}
+
+.cls-6,
+.cls-7 {
+  font-size: 36px;
+  fill: #fff;
+}
+
+.cls-6 {
+  font-family: OpenSans-Bold, Open Sans;
+  font-weight: 700;
+}
+
+.cls-7 {
+  stroke: #1d1d1b;
+  stroke-width: 0.25px;
+  font-family: OpenSans-ExtraBoldItalic, Open Sans;
+  font-weight: 800;
+  font-style: italic;
+}
+
+.cls-2-1 {
+  opacity: 0.5;
+}
+
+.cls-2-2,
+.cls-2-5 {
+  font-size: 36px;
+}
+
+.cls-2-2,
+.cls-2-5,
+.cls-2-6 {
+  fill: #fff;
+}
+
+.cls-2-2 {
+  stroke: #1d1d1b;
+  stroke-width: 0.25px;
+  font-family: OpenSans-ExtraBoldItalic, Open Sans;
+  font-weight: 800;
+  font-style: italic;
+}
+
+.cls-2-10,
+.cls-2-2,
+.cls-2-9 {
+  stroke-miterlimit: 10;
+}
+
+.cls-2-3 {
+  fill: #d9d9d9;
+}
+
+.cls-2-10,
+.cls-2-4 {
+  fill: #da5713;
+}
+
+.cls-2-5,
+.cls-2-6 {
+  font-family: OpenSans-Bold, Open Sans;
+  font-weight: 700;
+}
+
+.cls-2-6 {
+  font-size: 18px;
+}
+
+.cls-2-7 {
+  font-size: 11px;
+}
+
+.cls-2-7,
+.cls-2-8 {
+  font-family: OpenSans-Regular, Open Sans;
+}
+
+.cls-2-8 {
+  font-size: 12px;
+}
+
+.cls-2-9 {
+  fill: none;
+  stroke-width: 3px;
+}
+
+.cls-2-10,
+.cls-2-9 {
+  stroke: #da5713;
+}
+
+.hide {
+  display: none;
+}
+
+.cls-3-1 {
+  opacity: 0.5;
+}
+
+.cls-3-2,
+.cls-3-5,
+.cls-3-7 {
+  fill: #da5713;
+}
+
+.cls-3-2,
+.cls-3-3 {
+  opacity: 0.31;
+}
+
+.cls-3-3 {
+  fill: #f7931e;
+}
+
+.cls-3-4 {
+  font-size: 36px;
+  stroke: #1d1d1b;
+  stroke-width: 0.25px;
+  font-family: OpenSans-ExtraBoldItalic, Open Sans;
+  font-weight: 800;
+  font-style: italic;
+}
+
+.cls-14,
+.cls-3-4 {
+  fill: #fff;
+}
+
+.cls-3-4,
+.cls-3-6 {
+  stroke-miterlimit: 10;
+}
+
+.cls-3-6 {
+  fill: none;
+  stroke: #da5713;
+  stroke-width: 5px;
+}
+
+.cls-3-7 {
+  opacity: 0.63;
+  font-size: 56px;
+  font-family: MyriadPro-Regular, Myriad Pro;
+}
+
+.cls-3-8 {
+  fill: #d6853c;
+}
+
+.cls-3-9 {
+  fill: #92542f;
+}
+
+.cls-3-10 {
+  fill: #434043;
+}
+
+.cls-11 {
+  fill: #aa6433;
+}
+
+.cls-12 {
+  fill: #bf6e37;
+}
+
+.cls-13 {
+  fill: #71af77;
+}
+
+.cls-15 {
+  fill: #e7b173;
+}
+
+.cls-16 {
+  fill: #424242;
+}
+
+.cls-17 {
+  fill: #eee;
+}
+
+.cls-18 {
+  fill: #5b895e;
+}
+
+.cls-19 {
+  font-size: 10.7px;
+}
+
+.cls-19,
+.cls-3-26,
+.cls-33,
+.cls-3-40 {
+  font-family: OpenSans-Bold, Open Sans;
+  font-weight: 700;
+}
+
+.cls-3-20 {
+  fill: #111;
+}
+
+.cls-3-21 {
+  fill: #414143;
+}
+
+.cls-3-22 {
+  fill: #1a1a1a;
+}
+
+.cls-3-23 {
+  fill: #ce6a3e;
+}
+
+.cls-3-24 {
+  fill: gray;
+}
+
+.cls-3-25 {
+  fill: #a85436;
+}
+
+.cls-3-26 {
+  font-size: 11.28px;
+}
+
+.cls-3-27 {
+  fill: #d6907f;
+}
+
+.cls-3-28 {
+  fill: #8c4b41;
+}
+
+.cls-3-29 {
+  fill: #a45a49;
+}
+
+.cls-30 {
+  fill: #f2e9e7;
+}
+
+.cls-31 {
+  fill: #83a6b7;
+}
+
+.cls-32 {
+  fill: #6f858e;
+}
+
+.cls-33 {
+  font-size: 11.9px;
+}
+
+.cls-34 {
+  fill: #999;
+}
+
+.cls-35 {
+  fill: #ccc;
+}
+
+.cls-36 {
+  fill: #e6e6e6;
+}
+
+.cls-37 {
+  fill: #edbb2a;
+}
+
+.cls-38 {
+  fill: #4d4d4d;
+}
+
+.cls-39 {
+  fill: #c99b28;
+}
+
+.cls-3-40 {
+  font-size: 10.87px;
+}
+
+.cls-4-1 {
+  isolation: isolate;
+}
+
+.cls-4-2 {
+  opacity: 0.5;
+}
+
+.cls-4-3,
+.cls-4-8 {
+  font-size: 36px;
+}
+
+.cls-4-12,
+.cls-4-3,
+.cls-4-6,
+.cls-4-8 {
+  fill: #fff;
+}
+
+.cls-4-3 {
+  stroke: #1d1d1b;
+  stroke-width: 0.25px;
+  font-family: OpenSans-ExtraBoldItalic, Open Sans;
+  font-weight: 800;
+  font-style: italic;
+}
+
+.cls-4-11,
+.cls-4-3 {
+  stroke-miterlimit: 10;
+}
+
+.cls-4-4,
+.cls-4-5 {
+  fill: #da5713;
+}
+
+.cls-4-5,
+.cls-4-9 {
+  opacity: 0.31;
+}
+
+.cls-4-6 {
+  font-size: 18px;
+}
+
+.cls-4-12,
+.cls-4-6,
+.cls-4-7,
+.cls-4-8 {
+  font-family: OpenSans-Bold, Open Sans;
+  font-weight: 700;
+}
+
+.cls-4-7 {
+  font-size: 21px;
+}
+
+.cls-4-9 {
+  fill: #f7931e;
+}
+
+.cls-4-10 {
+  opacity: 0.63;
+  mix-blend-mode: multiply;
+}
+
+.cls-4-11 {
+  fill: none;
+  stroke: #da5713;
+}
+
+.cls-4-12 {
+  font-size: 23.93px;
+}
+
+/* #white-horse {
+  transform: rotate(45deg);
+} */
