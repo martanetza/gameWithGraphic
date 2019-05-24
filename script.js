@@ -31,7 +31,7 @@ function animation() {
 
   document.querySelector("#playButton").addEventListener("click", () => {
     let mouseClick = document.querySelector("#mouseClick");
-    mouseClick.play();
+    // mouseClick.play();
 
     document.querySelector("#FIRST").classList.add("hide");
     TweenLite.to("#playButton", 1, {
