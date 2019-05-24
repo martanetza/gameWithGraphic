@@ -86,9 +86,12 @@ let position;
 //   .querySelector(".listOfHorses")
 //   .addEventListener("click", clickToBet);
 function clickToBet(event) {
-  chosenHorse = event.target.dataset.horse;
-  horseRace();
-  console.log(chosenHorse);
+  console.log(event.target.parentElement.parentElement);
+  if (event.target.parentElement.parentElement.dataset.horse) {
+    chosenHorse = event.target.parentElement.parentElement.dataset.horse;
+    horseRace();
+    console.log(chosenHorse);
+  }
 }
 
 let randomVal = Math.random();
@@ -153,11 +156,14 @@ function horseRace() {
         console.log(horses.length);
         if (horses.length === 4) {
           showScores();
-          position = horses.indexOf(chosenHorse) + 1;
+          // position = horses.indexOf(chosenHorse) + 1;
+          position = horses.indexOf(chosenHorse);
           console.log(position);
           document.querySelector("#THIRD").classList.add("hide");
           document.querySelector(".cls-4-1").classList.remove("hide");
           // document.querySelector("span").textContent = position;
+          let scorseBoxes = Array.from(document.querySelectorAll(".scorseBox"));
+          scorseBoxes[position].style.opacity = "1";
         }
       }
     });

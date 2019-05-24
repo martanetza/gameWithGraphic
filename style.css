@@ -371,8 +371,9 @@ svg {
 .cls-4-6,
 .cls-4-7,
 .cls-4-8 {
-  font-family: OpenSans-Bold, Open Sans;
+  font-family: "OpenSans-Bold", "Open Sans";
   font-weight: 700;
+  fill: white;
 }
 
 .cls-4-7 {
@@ -393,10 +394,6 @@ svg {
   stroke: #da5713;
 }
 
-.cls-4-12 {
-  font-size: 23.93px;
-}
-
 .orangeBox {
   cursor: pointer;
 }
@@ -406,4 +403,20 @@ svg {
 
 #playButton:hover {
   cursor: pointer;
+}
+
+.cls-4-11 {
+  opacity: 0.63;
+  mix-blend-mode: multiply;
+}
+
+.cls-4-12 {
+  fill: none;
+  stroke: #da5713;
+}
+.cls-4-13 {
+  font-size: 21.73px;
+  font-family: "OpenSans-Bold", "Open Sans";
+  font-weight: 700;
+  fill: white;
 }
