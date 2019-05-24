@@ -403,3 +403,7 @@ svg {
 /* #white-horse {
   transform: rotate(45deg);
 } */
+
+#playButton:hover {
+  cursor: pointer;
+}

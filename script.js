@@ -13,18 +13,46 @@ function loadSVG() {
 }
 
 function animation() {
+  document.querySelector("#playButton").addEventListener("mouseover", () => {
+    TweenLite.to("#playButton", 0.2, {
+      scale: 0.96,
+      transformOrigin: "50% 50%"
+    });
+  });
+  document.querySelector("#playButton").addEventListener("mouseout", () => {
+    TweenLite.to("#playButton", 0.2, {
+      scale: 1,
+      transformOrigin: "50% 50%"
+    });
+  });
+  let whooshSound = document.querySelectorAll(
+    "#whooshSound0, #whooshSound1, #whooshSound2, #whooshSound3"
+  );
+
   document.querySelector("#playButton").addEventListener("click", () => {
+    let mouseClick = document.querySelector("#mouseClick");
+    mouseClick.play();
+
     document.querySelector("#FIRST").classList.add("hide");
+    TweenLite.to("#playButton", 1, {
+      scale: 0.5
+    });
 
     let boxesWithHorses = document.querySelectorAll(
       "#horse1, #horse2, #horse3, #horse4"
     );
 
     for (let i = 0; i < boxesWithHorses.length; i++) {
+      console.log(i);
+      let whooshSoundPlay = "whooshSound" + i;
+      console.log(whooshSoundPlay);
       TweenLite.from(boxesWithHorses[i], 1, {
         delay: i / 2,
         y: "-=519",
-        ease: Elastic.easeOut.config(0.5, 0.3)
+        ease: Elastic.easeOut.config(0.5, 0.3),
+        onStart: function() {
+          whooshSound[i].play();
+        }
       });
     }
     document.querySelector("#SECOND").classList.remove("hide");
@@ -66,12 +94,14 @@ function clickToBet(event) {
 let randomVal = Math.random();
 
 function horseRace() {
+  let raceSound = document.querySelector("#raceSound");
   let svg = document.querySelector("svg").getBoundingClientRect();
   console.log(svg.width);
   let animateArray = document.querySelectorAll(
     "#white-horse, #brown-white-horse, #black-horse, #brown-horse"
   );
   for (let i = 0; i < animateArray.length; i++) {
+    raceSound.play();
     let randomVal = Math.random();
 
     CustomEase.create(
@@ -84,7 +114,7 @@ function horseRace() {
     time = roundRandom + 10;
     let element = animateArray[i];
 
-    var tl = new TimelineMax({ repeat: -1, repeatDelay: 0 });
+    let tl = new TimelineMax({ repeat: -1, repeatDelay: 0 });
     tl.from(element, roundRandom / 10 + 0.2, {
       ease: Power2.easeIn,
       rotation: -10,
@@ -156,7 +186,7 @@ function morphSVG() {
   console.log(allBoxes);
   for (let i = 0; i < allBoxes.length; i++) {
     Array.from(allBoxes[i].querySelectorAll("text, path")).forEach(item => {
-      item.addEventListener("mouseover", () => {
+      item.addEventListener("mouseenter", () => {
         event.preventDefault();
         console.log(event.target);
         TweenMax.to(allBoxes_a[i], 0.4, {
@@ -164,7 +194,6 @@ function morphSVG() {
           y: "1"
         });
         TweenMax.to(allImageHorses[i], 0.4, {
-          delay: 0.2,
           scaleY: 0,
           transformOrigin: "100% 100%"
         });
@@ -175,15 +204,14 @@ function morphSVG() {
     });
   }
   for (let i = 0; i < allBoxes.length; i++) {
-    Array.from(allBoxes[i].querySelectorAll("path")).forEach(item => {
-      item.addEventListener("mouseout", () => {
+    Array.from(allBoxes[i].querySelectorAll("path, text")).forEach(item => {
+      item.addEventListener("mouseleave", () => {
         event.preventDefault();
         console.log(event.target);
         TweenMax.to(allBoxes_a[i], 0.4, {
           scaleY: 0
         });
         TweenMax.to(allImageHorses[i], 0.4, {
-          delay: 0.2,
           scaleY: 0.33,
           transformOrigin: "100% 100%"
         });
