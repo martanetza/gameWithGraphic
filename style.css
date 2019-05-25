@@ -420,3 +420,7 @@ svg {
   font-weight: 700;
   fill: white;
 }
+
+.nextButton {
+  cursor: pointer;
+}

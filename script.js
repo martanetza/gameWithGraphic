@@ -63,6 +63,13 @@ function animation() {
           clickToBet(event);
           document.querySelector("#SECOND").classList.add("hide");
           document.querySelector("#THIRD").classList.remove("hide");
+
+          TweenMax.to("#lets-race", 1.4, {
+            scale: 5,
+            opacity: 0,
+            transformOrigin: "50% 50%"
+          });
+
           // document.querySelector("#lets-race").addEventListener("click", () => {
           //   document.querySelector("#THIRD").classList.add("hide");
           //   document.querySelector(".cls-4-1").classList.remove("hide");
@@ -90,7 +97,14 @@ function clickToBet(event) {
   if (event.target.parentElement.parentElement.dataset.horse) {
     chosenHorse = event.target.parentElement.parentElement.dataset.horse;
     horseRace();
-    console.log(chosenHorse);
+    document.querySelector(
+      "#race [data-horse='" + chosenHorse + "']"
+    ).style.opacity = "0.7";
+
+    console.log(
+      chosenHorse,
+      document.querySelector("#race [data-horse='" + chosenHorse + "']")
+    );
   }
 }
 
@@ -163,12 +177,17 @@ function horseRace() {
           document.querySelector(".cls-4-1").classList.remove("hide");
           // document.querySelector("span").textContent = position;
           let scorseBoxes = Array.from(document.querySelectorAll(".scorseBox"));
-          scorseBoxes[position].style.opacity = "1";
+          scorseBoxes[position].style.opacity = "0.8";
+
+          document
+            .querySelector(".nextButton")
+            .addEventListener("click", showPoints);
         }
       }
     });
   }
 }
+
 function showScores() {
   let horseNames = document.querySelectorAll(".horseName");
   let horseTimes = document.querySelectorAll(".horseTime");
@@ -176,6 +195,35 @@ function showScores() {
   for (let i = 0; i < horseNames.length; i++) {
     horseNames[i].textContent = horses[i];
     horseTimes[i].textContent = scores[i];
+  }
+}
+
+function showPoints() {
+  let scoresParents = Array.from(document.querySelectorAll(".scoresParent"));
+  let scorseBoxes = Array.from(document.querySelectorAll(".scorseBox"));
+  console.log("hej");
+  // box animatio
+  TweenMax.to(scorseBoxes[position], 1, {
+    attr: { y: 258 }
+  });
+  // text animation
+  console.log(scorseBoxes[position].parentNode.childNodes[2]);
+  TweenMax.to(scoresParents[position].querySelector(".cls-4-6"), 1, {
+    attr: { transform: "translate(303.23 298.35)" }
+  });
+  TweenMax.to(scoresParents[position].querySelector(".cls-4-7"), 1, {
+    attr: { transform: "translate(798.01 300.63)" }
+  });
+  TweenMax.to(scoresParents[position].querySelector(".cls-4-8"), 1, {
+    attr: { transform: "translate(195.33 299.36)" }
+  });
+  // remove all postion but one
+  // let newArray = scoresParents.splice(1, 1);
+  console.log(position);
+  for (let i = 0; i < scoresParents.length; i++) {
+    if (i != position) {
+      scoresParents[i].classList.add("hide");
+    }
   }
 }
 
