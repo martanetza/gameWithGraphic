@@ -199,22 +199,73 @@ function showScores() {
 }
 
 function showPoints() {
+  console.log(chosenHorse);
+
+  document
+    .querySelectorAll(
+      ".FIFTHcls-9a, .FIFTH2cls-24a, .FIFTH2cls-32a, .FIFTH2cls-39a"
+    )
+    .forEach(horse => {
+      if (horse.dataset.horse === chosenHorse) {
+        horse.classList.remove("hide");
+      }
+      TweenMax.from(horse, 3, {
+        opacity: 0
+      });
+    });
+
+  document
+    .querySelectorAll(".nextButton, .playAgainButton, .scoresBox")
+    .forEach(e => {
+      e.classList.add("hide");
+    });
+  document.querySelector("#FIFTH").classList.remove("hide");
+
+  let horseFeet = document.querySelectorAll(".FIFTHcls-4a");
+  console.log(position);
+  document.querySelector("#pointsText").textContent =
+    50 - position * 10 + " POINTS";
+
+  let bellSound = document.querySelectorAll(
+    "#Bell1, #Bell2, #Bell3, #Bell4, #Bell5"
+  );
+
+  for (let i = 0; i < 5 - position - 1 + 1; i++) {
+    TweenMax.to(horseFeet[i], 0.5, {
+      delay: i,
+      fill: "#f7931e",
+      onStart: function() {
+        bellSound[i].play();
+      }
+    });
+  }
+  TweenMax.from("#pointsText", 0.5, {
+    delay: 5 - position - 1 + 1,
+    scale: 5,
+    transformOrigin: "50% 50%",
+    opacity: 0,
+    onStart: function() {
+      document.querySelector("#sucess").play();
+    },
+    ease: Bounce.easeOut
+  });
+
   let scoresParents = Array.from(document.querySelectorAll(".scoresParent"));
   let scorseBoxes = Array.from(document.querySelectorAll(".scorseBox"));
   console.log("hej");
   // box animatio
-  TweenMax.to(scorseBoxes[position], 1, {
+  TweenMax.to(scorseBoxes[position], 0.5, {
     attr: { y: 258 }
   });
   // text animation
   console.log(scorseBoxes[position].parentNode.childNodes[2]);
-  TweenMax.to(scoresParents[position].querySelector(".cls-4-6"), 1, {
+  TweenMax.to(scoresParents[position].querySelector(".cls-4-6"), 0.5, {
     attr: { transform: "translate(303.23 298.35)" }
   });
-  TweenMax.to(scoresParents[position].querySelector(".cls-4-7"), 1, {
+  TweenMax.to(scoresParents[position].querySelector(".cls-4-7"), 0.5, {
     attr: { transform: "translate(798.01 300.63)" }
   });
-  TweenMax.to(scoresParents[position].querySelector(".cls-4-8"), 1, {
+  TweenMax.to(scoresParents[position].querySelector(".cls-4-8"), 0.5, {
     attr: { transform: "translate(195.33 299.36)" }
   });
   // remove all postion but one
