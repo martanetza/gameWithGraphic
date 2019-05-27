@@ -30,9 +30,6 @@ function animation() {
   );
 
   document.querySelector("#playButton").addEventListener("click", () => {
-    let mouseClick = document.querySelector("#mouseClick");
-    // mouseClick.play();
-
     document.querySelector("#FIRST").classList.add("hide");
     TweenLite.to("#playButton", 1, {
       scale: 0.5
@@ -51,6 +48,7 @@ function animation() {
         y: "-=519",
         ease: Elastic.easeOut.config(0.5, 0.3),
         onStart: function() {
+          console.log("play " + i);
           whooshSound[i].play();
         }
       });
@@ -182,6 +180,13 @@ function horseRace() {
           document
             .querySelector(".nextButton")
             .addEventListener("click", showPoints);
+          document
+            .querySelector("#playAgainButton")
+            .addEventListener("click", () => {
+              document.querySelector(".cls-4-1").classList.add("hide");
+              document.querySelector("#FIRST").classList.remove("hide");
+              document.location.reload();
+            });
         }
       }
     });
@@ -215,7 +220,7 @@ function showPoints() {
     });
 
   document
-    .querySelectorAll(".nextButton, .playAgainButton, .scoresBox")
+    .querySelectorAll(".nextButton, #playAgainButton, .scoresBox")
     .forEach(e => {
       e.classList.add("hide");
     });
