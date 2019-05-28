@@ -3,8 +3,7 @@
     <image xlink:href="images/Asset4.png" x="0" y="0" width="1020" height="500" />
   </pattern>
   
-  <title>prototypesave1</title>
-  <g class="cls-1">
+   <g class="cls-1">
 
       <rect class="cls-2" fill="url(#img1)" width="1020" height="500"/>
     <g id="FIRST">
@@ -85,8 +84,10 @@
   <polygon class="cls-2-4" points="327 86.06 629.45 87.56 327 89.06 327 86.06"/>
   </g>
   <g id="horse1" data-horse="PEGASUS">
+    <g>
     <path class="cls-2-3" d="M47.49,233.46H244.33a0,0,0,0,1,0,0v68.16a12.7,12.7,0,0,1-12.7,12.7H58.94a11.45,11.45,0,0,1-11.45-11.45V233.46A0,0,0,0,1,47.49,233.46Z" transform="translate(291.82 547.78) rotate(180)"/>
     <image id="horseImage1" width="593" height="460" transform="translate(47 161) scale(0.33)" xlink:href="images/white-horse_593x460.png"/>
+    </g>
     <g class="orangeBox">
     <path class="cls-2-4a" d="M47.49,313.32H244.33a0,0,0,0,1,0,0v55a12.7,12.7,0,0,1-12.7,12.7H58.94a11.45,11.45,0,0,1-11.45-11.45V313.32A0,0,0,0,1,47.49,313.32Z"/>
     <path class="cls-2-4b" d="M47.49,313.32H244.33a0,0,0,0,1,0,0v55a12.7,12.7,0,0,1-12.7,12.7H58.94a11.45,11.45,0,0,1-11.45-11.45V313.32A0,0,0,0,1,47.49,313.32Z"/>
@@ -98,8 +99,10 @@
     </g>
   </g>
   <g id="horse2" data-horse="SCOOBY">
+  <g>
     <path class="cls-2-3" d="M290.49,233.46H487.33a0,0,0,0,1,0,0v68.16a12.7,12.7,0,0,1-12.7,12.7H301.94a11.45,11.45,0,0,1-11.45-11.45V233.46A0,0,0,0,1,290.49,233.46Z" transform="translate(777.82 547.78) rotate(180)"/>
     <image id="horseImage2" width="593" height="460" transform="translate(290 161) scale(0.33)" xlink:href="images/brown-white-horse_593x460.png"/>
+   </g>
    <g class="orangeBox">
     <path class="cls-2-4a" d="M290.49,313.32H487.33a0,0,0,0,1,0,0v55a12.7,12.7,0,0,1-12.7,12.7H301.94a11.45,11.45,0,0,1-11.45-11.45V313.32A0,0,0,0,1,290.49,313.32Z"/>
     <path class="cls-2-4b" d="M290.49,313.32H487.33a0,0,0,0,1,0,0v55a12.7,12.7,0,0,1-12.7,12.7H301.94a11.45,11.45,0,0,1-11.45-11.45V313.32A0,0,0,0,1,290.49,313.32Z"/>
@@ -112,8 +115,10 @@
 
   </g>
   <g id="horse3" data-horse="INFERNO">
+     <g>
     <path class="cls-2-3" d="M533.49,233.46H730.33a0,0,0,0,1,0,0v68.16a12.7,12.7,0,0,1-12.7,12.7H544.94a11.45,11.45,0,0,1-11.45-11.45V233.46A0,0,0,0,1,533.49,233.46Z" transform="translate(1263.82 547.78) rotate(180)"/>
     <image id="horseImage4" width="593" height="460" transform="translate(533 161.59) scale(0.33)" xlink:href="images/black-horse_593x460.png"/>
+    </g>
     <g class="orangeBox">
     <path class="cls-2-4a" d="M533.49,313.32H730.33a0,0,0,0,1,0,0v55a12.7,12.7,0,0,1-12.7,12.7H544.94a11.45,11.45,0,0,1-11.45-11.45V313.32A0,0,0,0,1,533.49,313.32Z"/>
     <path class="cls-2-4b" d="M533.49,313.32H730.33a0,0,0,0,1,0,0v55a12.7,12.7,0,0,1-12.7,12.7H544.94a11.45,11.45,0,0,1-11.45-11.45V313.32A0,0,0,0,1,533.49,313.32Z"/>
@@ -126,8 +131,10 @@
   </g>
 
   <g id="horse4" data-horse="SPIRIT">
+    <g>
     <path class="cls-2-3" d="M776.49,233.46H973.33a0,0,0,0,1,0,0v68.16a12.7,12.7,0,0,1-12.7,12.7H787.94a11.45,11.45,0,0,1-11.45-11.45V233.46A0,0,0,0,1,776.49,233.46Z" transform="translate(1749.82 547.78) rotate(180)"/>
     <image id="horseImage3" width="593" height="460" transform="translate(776 161.59) scale(0.33)" xlink:href="images/brown-horse_593x460.png"/>
+    </g>
     <g class="orangeBox">
     <path class="cls-2-4a" d="M776.49,313.32H973.33a0,0,0,0,1,0,0v55a12.7,12.7,0,0,1-12.7,12.7H787.94a11.45,11.45,0,0,1-11.45-11.45V313.32A0,0,0,0,1,776.49,313.32Z"/>
     <path class="cls-2-4b" d="M776.49,313.32H973.33a0,0,0,0,1,0,0v55a12.7,12.7,0,0,1-12.7,12.7H787.94a11.45,11.45,0,0,1-11.45-11.45V313.32A0,0,0,0,1,776.49,313.32Z"/>

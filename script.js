@@ -1,4 +1,4 @@
-window.addEventListener("DOMContentLoaded", loadSVG);
+window.addEventListener("load", loadSVG);
 
 //show graphic
 
@@ -42,7 +42,7 @@ function animation() {
     for (let i = 0; i < boxesWithHorses.length; i++) {
       console.log(i);
       let whooshSoundPlay = "whooshSound" + i;
-      console.log(whooshSoundPlay);
+      console.log("whooshSoundPlay", whooshSoundPlay);
       TweenLite.from(boxesWithHorses[i], 1, {
         delay: i / 2,
         y: "-=519",
@@ -50,6 +50,7 @@ function animation() {
         onStart: function() {
           console.log("play " + i);
           whooshSound[i].play();
+          //document.querySelector("#whooshSound0").play();
         }
       });
     }
